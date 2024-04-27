@@ -59,7 +59,11 @@
                         <div class="navbar-nav mx-auto">
                             <a href="{{ route('home') }}" class="nav-item nav-link">Home</a>
                             <a href="{{ url('product') }}" class="nav-item nav-link">Product</a>
-                            <a href="{{ route('history') }}" class="nav-item nav-link">Purchase History</a>
+                            @auth
+                                <a href="{{ route('history') }}" class="nav-item nav-link">Purchase History</a>
+                            @else
+                                <a href="{{ route('login') }}" class="nav-item nav-link">Purchase History</a>
+                            @endauth
                             {{-- <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                                 <div class="dropdown-menu m-0 bg-secondary rounded-0">
